@@ -1,16 +1,6 @@
-def digit_product(num):
-	'Generates the product of the digits in a number'
-	num = str(num)
-	prod = 1
-	for x in num:
-		prod *= int(x)
-	return prod
-
-def sliding_window(indexable, window_size):
-	'Generates a sliding window of slices from some indexable object'
-	while len(indexable) >= window_size:
-		yield indexable[:window_size]
-		indexable = indexable[1:]
+import sys
+sys.path.insert(0, '../')
+from frameworks import comprehensions
 
 raw_big_number = '''
 73167176531330624919225119674426574742355349194934
@@ -35,4 +25,4 @@ raw_big_number = '''
 71636269561882670428252483600823257530420752963450'''
 
 big_number = raw_big_number.replace('\n', '')
-print(max(digit_product(x) for x in sliding_window(big_number, 13)))
+print(max(comprehensions.product(str(digit_product(x))) for x in comprehensions.sliding_window(big_number, 13)))
