@@ -26,3 +26,20 @@ def prime_generator():
 			yield six_index + 1
 
 		six_index += 6
+
+def prime_divisors(num, primes_source):
+	'''Finds the prime divisors of the given number
+	Requires primes up to at least the square root of the number'''
+	divisors = []
+	root = num ** 0.5
+	for x in primes_source:
+		if x > root:
+			break
+		while num % x == 0:
+			divisors.append(x)
+			num /= x
+			root = num ** 0.5
+
+	if num != 1:
+		divisors.append(num)
+	return divisors
