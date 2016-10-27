@@ -1,10 +1,6 @@
 import sys
 sys.path.insert(0, '../')
-from frameworks import comprehensions
-
-def factorial(n):
-	'Calculates the factorial of a value'
-	return comprehensions.product(x for x in range(1, n + 1)) if n > 0 else 1
+from frameworks.comprehensions import factorial
 
 def grid_solve(m, n):
 	'Solves the problem by calculating the number of paths to each node'

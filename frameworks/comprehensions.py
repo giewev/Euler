@@ -10,3 +10,11 @@ def product(iterable):
 	for x in iterable:
 		prod *= int(x)
 	return prod
+
+def factorial(n):
+	'Calculates the factorial of a value'
+	return product(x for x in range(1, n + 1)) if n > 0 else 1
+
+def digit_sum(n):
+	'Calculates the sum of the digits in a number'
+	return sum(int(x) for x in str(n))
