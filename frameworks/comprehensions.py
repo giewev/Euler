@@ -18,3 +18,7 @@ def factorial(n):
 def digit_sum(n):
 	'Calculates the sum of the digits in a number'
 	return sum(int(x) for x in str(n))
+
+def flatten_once(iterable):
+	'Flattens a potentially nested iterable to remove one layer of nesting'
+	return [y for x in iterable for y in x]
